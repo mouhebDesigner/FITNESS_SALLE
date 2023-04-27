@@ -16,4 +16,21 @@ class Activity extends Model
         "category_id",
     ];
     
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+    public function seances(){
+        return $this->hasMany(Seance::class);
+    }
+
+    public function competitions(){
+        return $this->hasMany(Competition::class);
+    }
+
+    public function abonnements(){
+        return $this->belongsToMany(Abonnement::class, 'abonnement_activities', 'acitivty_id', 'abonnement_id');
+    }
+    
 }

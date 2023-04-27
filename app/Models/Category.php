@@ -11,5 +11,7 @@ class Category extends Model
 
     protected $fillable = ['label'];
 
-    
+    public function activities(){
+        return $this->hasMany(Activity::class);
+    }
 }

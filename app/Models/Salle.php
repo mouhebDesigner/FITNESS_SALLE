@@ -13,4 +13,8 @@ class Salle extends Model
         "label",
         "num"
     ];
+
+    public function seances(){
+        $this->hasMany(Seance::class);
+    }
 }

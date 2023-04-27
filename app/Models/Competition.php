@@ -16,5 +16,13 @@ class Competition extends Model
         "activity_id",
     ];
 
+    public function activity(){
+        return $this->belongsTo(Activity::class);
+    }
+
+    public function users(){
+        return $this->belongsToMany(User::class, 'user_competitions', 'competition_id', 'user_id');
+    }
+
     
 }

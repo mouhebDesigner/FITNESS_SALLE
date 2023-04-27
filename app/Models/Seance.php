@@ -16,4 +16,17 @@ class Seance extends Model
         "activity_id",
         "user_id"
     ];
+
+    public function salle(){
+        return $this->belongsTo(Salle::class);
+    }
+    
+    public function activity(){
+        return $this->belongsTo(Activity::class);
+    }
+    
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    
 }
