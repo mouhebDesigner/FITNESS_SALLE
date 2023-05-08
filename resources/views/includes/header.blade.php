@@ -11,19 +11,19 @@
 				<nav class="main-menu">
 					<ul>
 						<li class="has-dropdown">
-							<a href="index.html">Accueil</a>
+							<a href="/">Accueil</a>
 							
 						</li>
 						<li class="has-dropdown">
-							<a href="#">Abonnements</a>
+							<a href="{{ route('abonnements.index') }}">Abonnements</a>
 							
 						</li>
 						<li class="has-dropdown">
-							<a href="#">Entraineurs</a>
+							<a href="{{ route('entraineurs.index') }}">Entraineurs</a>
 						</li>
 					
 						<li class="has-dropdown">
-							<a href="#">Contact</a>
+							<a href="{{ route('contact.index') }}">Contact</a>
 							
 						</li>
 

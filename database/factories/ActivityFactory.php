@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ActivityFactory extends Factory
@@ -14,7 +15,10 @@ class ActivityFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "label" => $this->faker->text(10),
+            "description" => $this->faker->text(150),
+            "prix" => 12.3,
+            "category_id" =>Category::all()->random()->id,
         ];
     }
 }

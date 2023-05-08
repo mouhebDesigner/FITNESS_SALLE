@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <main>
+<main>
     <section class="breadcrumb-area pt-180 pb-180 pt-md-120 pb-md-120 pt-xs-100 pb-xs-100 bg-fix" data-overlay="black"
         data-opacity="7" data-background="{{ asset('frontOffice/assets/img/bg/breadcrumb-bg-4.jpg') }}"
         style="background-image: url(&quot;{{ asset('assets/frontOffice/img/bg/breadcrumb-bg-4.jpg')}}&quot;);">

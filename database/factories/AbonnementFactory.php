@@ -14,7 +14,9 @@ class AbonnementFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "label" => $this->faker->text(10),
+            "prix" => 120,
+            "horaires" => $this->faker->text(10)
         ];
     }
 }

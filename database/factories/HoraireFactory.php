@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UserAbonnementFactory extends Factory
+class HoraireFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,7 +14,9 @@ class UserAbonnementFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "jour" => $this->faker->text(5),
+            "startDate" => $this->faker->dateTime(),
+            "endDate" => $this->faker->dateTime()
         ];
     }
 }

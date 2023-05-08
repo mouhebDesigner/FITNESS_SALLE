@@ -27,6 +27,7 @@
 </head>
 
 <body>
+
     <!-- preloader -->
     <div id="preloader">
         <div class="preloader">
@@ -41,6 +42,7 @@
     @yield('content')
 
     @include('includes.footer')
+
 
 
 

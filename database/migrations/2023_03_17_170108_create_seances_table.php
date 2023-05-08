@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersAbonnementsTable extends Migration
+class CreateSeancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateUsersAbonnementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_abonnements', function (Blueprint $table) {
+        Schema::create('seances', function (Blueprint $table) {
             $table->id();
-            $table->date("startDate");
-            $table->date("endDate");
+            $table->datetime('startDate');
+            $table->datetime('endDate');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('abonnement_id')->constrained('abonnements')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('salle_id')->constrained('salles')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateUsersAbonnementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_abonnements');
+        Schema::dropIfExists('seances');
     }
 }

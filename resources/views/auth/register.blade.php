@@ -1,77 +1,82 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<main>
+    <section class="breadcrumb-area pt-180 pb-180 pt-md-120 pb-md-120 pt-xs-100 pb-xs-100 bg-fix" data-overlay="black"
+        data-opacity="7" data-background="{{ asset('frontOffice/assets/img/bg/breadcrumb-bg-4.jpg') }}"
+        style="background-image: url(&quot;{{ asset('assets/frontOffice/img/bg/breadcrumb-bg-4.jpg')}}&quot;);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="breadcrumb-content">
+                        <h3 class="title">S'inscrire</h3>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li class="active">S'inscrire</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <div class="contact-area pt-130 pb-130">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-md-6 col-lg-5">
+					<div class="contact-text mb-xs-50">
+						<div class="section-title-2 text-right bar-theme-color contact-title">
+							<h3>Inscrivez-vous à travers ce formulaire</h3>
+							<span>Hey</span>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-6">
+					<div class="contact-form">
+						<form action="{{ route('register') }}" method="post">
+                            @csrf 
+                          
+							<div class="input-wrap input-icon icon-name">
+								<input type="text" placeholder="Nom" name="nom">
+							</div>
+							<div class="input-wrap input-icon icon-name">
+								<input type="text" placeholder="Prénom" name="prenom">
+							</div>
+							<div class="input-wrap input-icon icon-name">
+								<input type="number" placeholder="Numéro de téléphone" name="numTel">
+							</div>
+							<div class="input-wrap input-icon icon-name">
+								<input type="number" placeholder="Numéro mobile" name="numMobile">
+							</div>
+							<div class="input-wrap input-icon icon-name">
+								<input type="number" placeholder="Carte d'identité national" name="cin">
+							</div>
+							<div class="input-wrap input-icon icon-name">
+								<input type="text" placeholder="Adresse" name="adresse">
+							</div>
+							<div class="input-wrap input-icon icon-name">
+								<input type="date" placeholder="Date de naissance" name="date_naissance">
+							</div>
+							<div class="input-wrap input-icon icon-name">
+								<input type="text" placeholder="E-mail adresse" name="email">
+							</div>
+							<div class="input-wrap input-icon icon-email">
+								<input type="text" placeholder="Mot de passe" name="password">
+							</div>
+							<div class="input-wrap input-icon icon-email">
+								<input type="text" placeholder="Confirmer mot de passe" name="password_confirmation">
+							</div>
+							
+							
+							<button type="submit" class="btn btn-gra">Connecter<i class="fas fa-angle-double-right"></i>
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
 @endsection
