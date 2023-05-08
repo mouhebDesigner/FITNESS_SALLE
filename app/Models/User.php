@@ -63,4 +63,8 @@ class User extends Authenticatable
     public function isAdmin(){
         return str_contains(Auth::user()->role, 'ROLE_ADMIN');
     }
+
+    public function isTrainer(){
+        return str_contains(Auth::user()->role, 'ROLE_ENTRAINEUR');
+    }
 }
