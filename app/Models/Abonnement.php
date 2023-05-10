@@ -12,7 +12,7 @@ class Abonnement extends Model
     protected $fillable = [
         "label",
         "prix",
-        "horaires"
+        "type"
     ];
 
     public function users(){
