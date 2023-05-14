@@ -10,15 +10,15 @@
 			<div class="col-xl-8 d-xl-flex justify-content-center align-items-center d-none">
 				<nav class="main-menu">
 					<ul>
-						<li class="has-dropdown">
+						<li class="">
 							<a href="/">Accueil</a>
 							
 						</li>
-						<li class="has-dropdown">
+						<li class="">
 							<a href="{{ route('abonnements.index') }}">Abonnements</a>
 							
 						</li>
-						<li class="has-dropdown">
+						<li class="">
 							<a href="{{ route('entraineurs.index') }}">Entraineurs</a>
 						</li>
                         
@@ -28,11 +28,11 @@
                         </li>
                         @endif
 
-                        <li class="has-dropdown">
+                        <li class="">
                             <a href="{{ route('competitions.index') }}">Compétition</a>
                         </li>
 
-						<li class="has-dropdown">
+						<li class="">
 							<a href="{{ route('contact.index') }}">Contact</a>
 							
 						</li>

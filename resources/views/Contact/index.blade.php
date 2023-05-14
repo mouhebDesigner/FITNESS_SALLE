@@ -21,6 +21,16 @@
     </section>
     <div class="contact-area pt-130 pb-130">
 		<div class="container">
+			@if(Session::has('success'))
+			<div class="row">
+				<div class="col-12">
+					<div class="alert alert-success">
+
+						{{ Session::get('success') }}
+					</div>
+				</div>
+			</div>
+			@endif
 			<div class="row justify-content-between">
 				<div class="col-md-6 col-lg-5">
 					<div class="contact-text mb-xs-50">
@@ -59,25 +69,22 @@
 				</div>
 				<div class="col-md-6 col-lg-6">
 					<div class="contact-form">
-						<form action="#">
+						<form action="{{ route('contact.store') }}" method="post">
+							@csrf 
 							<div class="input-wrap input-icon icon-name">
-								<input type="text" placeholder="Full Name Here">
+								<input type="text" placeholder="Ecrire votre nom" name="nom">
 							</div>
 							<div class="input-wrap input-icon icon-email">
-								<input type="text" placeholder="Email Address">
+								<input type="text" placeholder="Ecrire adresse E-mail" name="email">
 							</div>
 							<div class="input-wrap input-icon icon-select">
-								<select name="" id="">
-									<option value="">Subject</option>
-									<option value="">Web</option>
-									<option value="">UX/UI</option>
-								</select>
+								<input type="text" placeholder="Ecrire un sujet" name="sujet">
 							</div>
 							<div class="input-wrap input-icon icon-msg">
-								<textarea rows="5" placeholder="Write Message" spellcheck="false"></textarea>
+								<textarea rows="5" placeholder="Ecrire un message" name="message" spellcheck="false"></textarea>
 							</div>
 							<button type="submit" class="btn btn-gra">
-								Send message <i class="fas fa-angle-double-right"></i>
+								Envoyer message <i class="fas fa-angle-double-right"></i>
 							</button>
 						</form>
 					</div>
