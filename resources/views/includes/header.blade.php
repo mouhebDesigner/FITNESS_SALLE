@@ -21,17 +21,22 @@
 						<li class="has-dropdown">
 							<a href="{{ route('entraineurs.index') }}">Entraineurs</a>
 						</li>
-					
+                        
+                        @if(Auth::check())
+                        <li class="">
+                            <a href="{{ route('schedule.index') }}">Schedule</a>
+                        </li>
+                        @endif
+
+                        <li class="has-dropdown">
+                            <a href="{{ route('competitions.index') }}">Compétition</a>
+                        </li>
+
 						<li class="has-dropdown">
 							<a href="{{ route('contact.index') }}">Contact</a>
 							
 						</li>
 					
-                        @if(Auth::check())
-						<li class="">
-							<a href="{{ route('schedule.index') }}">Schedule</a>
-						</li>
-                        @endif
 
                         @guest
                         <li class="has-dropdown">   

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SalleController;
 use App\Http\Controllers\Admin\SeanceController;
 use App\Http\Controllers\Admin\ActivityController;
+use App\Http\Controllers\ActivityController as ActivityClientController; 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AbonnementController;
 use App\Http\Controllers\AbonnementController as AbonnementClientController;
@@ -23,6 +24,10 @@ use App\Http\Controllers\AbonnementController as AbonnementClientController;
 |
 */
 
+Route::prefix('entraineur')->name('entraineur.')->group(function () {
+    Route::get('seances', [SeanceController::class, "index"])->name('seances.index');
+    Route::put('seances/{seance}/annuler', [SeanceController::class, "annuler"])->name('seances.annuler');
+});
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resources([
         "users" => UserController::class,
@@ -39,17 +44,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('abonnements', [AbonnementClientController::class, 'index'])->name('abonnements.index');
+Route::resource('abonnements', AbonnementClientController::class);
 Route::get('entraineurs', function(){
     return view('entraineurs.index');
 })->name('entraineurs.index');
 
 Route::get('schedule', function(){
     $jours = ['lundi', 'mardi','mercredi', 'jeudi','vendredi','samedi','dimanche'];
-    $seanceIds = [];
     foreach(Auth::user()->abonnements()->get() as $abonnement){
         foreach($abonnement->activities()->get() as $activity){
-            
             foreach($activity->seances()->get() as $seance){
                 $seanceIds[] = $seance->id;
             }
@@ -59,7 +62,9 @@ Route::get('schedule', function(){
     $seances =  Seance::whereIn('id', $seanceIds)->get();
 
     return view('schedule.index', compact('jours', 'seances'));
-})->name('schedule.index')->middleware('auth');
+})->name('schedule.index');
+
+Route::resource('activities', ActivityClientController::class);
 
 Route::get('contact', function(){
     return view('contact.index');
@@ -68,6 +73,10 @@ Route::get('contact', function(){
 Route::get('/home/dashboard', function(){
     return view('admin.home');
 });
+
+Route::get('competition', function(){
+    return view('competition.index');
+})->name('competitions.index');
 
 Route::get('abonnement/{abonnement}/participer', [AbonnementClientController::class, 'participer'])->name('abonnement.participer')->middleware('auth');
 
