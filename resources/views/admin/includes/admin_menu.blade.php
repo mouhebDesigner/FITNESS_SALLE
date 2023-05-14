@@ -48,7 +48,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link @if(Request::is('admin/abonnements*')) @else collapsed @endif" href="{{ url('admin/abonnements') }}">
+    <a class="nav-link @if(Request::is('admin/contacts*')) @else collapsed @endif" href="{{ url('admin/contacts') }}">
         <i class="bi bi-grid"></i>
         <span>Contact</span>
     </a>

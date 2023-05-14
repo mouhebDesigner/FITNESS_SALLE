@@ -4,13 +4,14 @@ use App\Models\Seance;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SalleController;
 use App\Http\Controllers\Admin\SeanceController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AbonnementController;
+use App\Http\Controllers\ContactController as ContactClientController; 
 use App\Http\Controllers\ActivityController as ActivityClientController; 
 use App\Http\Controllers\AbonnementController as AbonnementClientController;
 
@@ -36,7 +37,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         "activities" => ActivityController::class,
         "categories" => CategoryController::class,
         "seances" => SeanceController::class,
-        "abonnements" => AbonnementController::class
+        "abonnements" => AbonnementController::class,
+        'contacts' => ContactController::class
     ]);
 });
 
@@ -67,7 +69,7 @@ Route::get('schedule', function(){
 
 Route::resource('activities', ActivityClientController::class);
 
-Route::resource('contact', ContactController::class);
+Route::resource('contact', ContactClientController::class);
 
 Route::get('/home/dashboard', function(){
     return view('admin.home');
