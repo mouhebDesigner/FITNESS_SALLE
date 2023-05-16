@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
                 "adresse" => "tunis",
                 "numTel" => 1233329,
                 "cin" => 12333229,
-                "role" => \json_encode(['ROLE_CLIENT' => true]),
+                "role" => \json_encode(['ROLE_ABONNE' => true]),
                 "date_naissance" => "2015-07-19",
                 "email" => "client@gmail.com",
                 "password" => Hash::make('adminadmin'),
