@@ -4,7 +4,7 @@
 		<div class="row align-items-center justify-content-xl-center">
 			<div class="col-xl-2 col-lg-3 col-md-3 col-6">
 				<div class="logo-area">
-					<a href="index.html"><img src="{{ asset('frontOffice/assets/img/logo/logo.png') }}" alt="Logo"></a>
+					<a href="index.html"><h2> Karmi GYM </h2></a>
 				</div>
 			</div>
 			<div class="col-xl-8 d-xl-flex justify-content-center align-items-center d-none">
@@ -29,10 +29,7 @@
                         @endif
 
                         <li class="">
-                            <a href="javascript:void(0)">Compétition</a>
-                        </li>
-                        <li class="">
-                            <a href="javascript:void(0)">Conseil</a>
+                            <a href="{{ route('competitions.index') }}">Compétition</a>
                         </li>
 
 						<li class="">

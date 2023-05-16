@@ -25,23 +25,23 @@
 								<td>En surpoids</td>
 							</tr>
 							<tr>
-								<td>30.0 - and Above</td>
+								<td>30.0 - et plus</td>
 								<td>Obèse</td>
 							</tr>
 							</tbody>
 						</table>
 					</div>
 					<div class="calculator-form">
-						<h3>BMI Calculator Chart</h3>
+						<h3>Tableau de calcul de l’IMC</h3>
 						<form action="#">
 							<div class="input-wrap">
-								<input type="text" placeholder="Height/cm">
+								<input type="text" placeholder="taille/cm">
 							</div>
 							<div class="input-wrap">
-								<input type="text" placeholder="Weight/kg">
+								<input type="text" placeholder="poids/kg">
 							</div>
 							<div class="input-wrap">
-								<input type="text" placeholder="Weight/kg">
+								<input type="text" placeholder="poids/kg">
 							</div>
 							<div class="input-wrap">
 								<select id="gender">
@@ -59,7 +59,7 @@
 							</div>
 							<div class="input-wrap">
 								<a href="#" class="btn btn-gra">
-									Calculate <i class="fas fa-angle-double-right"></i>
+									Calculer<i class="fas fa-angle-double-right"></i>
 								</a>
 							</div>
 						</form>

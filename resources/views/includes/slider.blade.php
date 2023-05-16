@@ -12,14 +12,14 @@
                             <div class="slider-content-1">
                                 <span data-animation="fadeInUp" data-delay="0.3s" class=""
                                     style="animation-delay: 0.3s;">
-                                    Making Different Form Others
+                                    Faisant D’autres Formes
                                 </span>
                                 <h2 data-animation="fadeInUp" data-delay="0.6s" class="" style="animation-delay: 0.6s;">
-                                    Build A Perferct Health
-                                    Growth</h2>
+                                Construire une 
+</br>santé ideal</h2>
                                 <a href="#" class="btn btn-gra" data-animation="fadeInUp" data-delay="0.9s"
                                     style="animation-delay: 0.9s;">
-                                    join with us
+                                    rejoignez-nous
                                     <i class="fas fa-angle-double-right"></i>
                                 </a>
                             </div>

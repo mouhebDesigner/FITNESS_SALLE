@@ -12,9 +12,8 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="footer-widgets footer-about-widget">
 						<div class="footer-logo">
-							<a href="index.html">
-								<img src="{{ asset('frontOffice/assets/img/logo/logo-white.png') }}" alt="Logo">
-							</a>
+						<h1 class="widget-title">Karmi GYM </h1>
+							
 						</div>
 						<p>
 							Ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
@@ -47,7 +46,7 @@
 						<div class="news-wrap">
 							<div class="news-img">
 								<a href="#">
-									<img src="assets/img/widget/widget-2.png" alt="widget">
+								
 								</a>
 							</div>
 							<div class="news-content">
