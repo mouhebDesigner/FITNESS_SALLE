@@ -72,6 +72,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $users->links() }}
                         <!-- End Default Table Example -->
                     </div>
                 </div>

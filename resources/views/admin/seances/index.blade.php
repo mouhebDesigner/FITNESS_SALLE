@@ -168,6 +168,8 @@
                             </tbody>
                         </table>
 
+                        
+
                         {{ $seances->links() }}
                         <!-- End Default Table Example -->
                     </div>

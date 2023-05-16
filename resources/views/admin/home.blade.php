@@ -41,45 +41,7 @@
 
 
             </div>
-            <div class="col-lg-6">
-
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Produits</h5>
-
-                        <!-- Default Table -->
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Libéllé </th>
-                                    <th scope="col">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach(App\Models\Salle::limit(5)->get() as $salle)
-                                    <tr>
-                                        <td>{{ $salle->id }}</td>
-                                        <td>{{ $salle->label }}</td>
-                                        <td>{{ $salle->num }}</td>
-                                        <td>
-                                            {{-- <div class="d-flex justify-content-around">
-                                                <button type="submit" class="btn-delete delete-confirm" data-model="étudiant" title="Supprimer un étudiant" data-url="{{ route('admin.matieres.destroy', ['matiere' => $salle]) }}" >
-                                                    <i class="fa fa-trash"></i>
-                                                </button>
-                                             
-                                            </div> --}}
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <!-- End Default Table Example -->
-                    </div>
-                </div>
-
-
-            </div>
+          
             
         </div>
 

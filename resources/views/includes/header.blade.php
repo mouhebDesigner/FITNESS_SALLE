@@ -31,6 +31,9 @@
                         <li class="">
                             <a href="{{ route('competitions.index') }}">Compétition</a>
                         </li>
+                        <li class="">
+                            <a href="javascript:void(0)">Conseil</a>
+                        </li>
 
 						<li class="">
 							<a href="{{ route('contact.index') }}">Contact</a>
