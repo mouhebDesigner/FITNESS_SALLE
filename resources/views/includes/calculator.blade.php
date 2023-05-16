@@ -3,30 +3,30 @@
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-6 offset-lg-6">
 					<div class="calculator-chart mb-70">
-						<h3>BMI Calculator Chart</h3>
+						<h3>Tableau du calculateur d'IMC</h3>
 						<table class="table bg-white">
 							<thead>
 							<tr>
-								<th scope="col">BMI</th>
-								<th scope="col">Weight Status</th>
+								<th scope="col">IMC</th>
+								<th scope="col">Statut de poids</th>
 							</tr>
 							</thead>
 							<tbody>
 							<tr>
-								<td>Below 18.5</td>
-								<td>Underweight</td>
+								<td>Dessous 18.5</td>
+								<td>Poids insuffisant</td>
 							</tr>
 							<tr>
 								<td>18.5 - 24.9</td>
-								<td>Healthy</td>
+								<td>En bonne santé</td>
 							</tr>
 							<tr>
 								<td>25.0 - 29.9</td>
-								<td>Overweight</td>
+								<td>En surpoids</td>
 							</tr>
 							<tr>
 								<td>30.0 - and Above</td>
-								<td>Obese</td>
+								<td>Obèse</td>
 							</tr>
 							</tbody>
 						</table>
@@ -45,9 +45,9 @@
 							</div>
 							<div class="input-wrap">
 								<select id="gender">
-									<option value="gender">Gender</option>
-									<option value="male">Male</option>
-									<option value="fmale">fmale</option>
+									<option value="gender">Genre</option>
+									<option value="male">Homme</option>
+									<option value="fmale">Femme</option>
 								</select>
 							</div>
 							<div class="input-wrap">
