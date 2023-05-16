@@ -54,6 +54,7 @@ Route::get('entraineurs', function(){
 
 Route::get('schedule', function(){
     $jours = ['lundi', 'mardi','mercredi', 'jeudi','vendredi','samedi','dimanche'];
+    $seanceIds = [];
     foreach(Auth::user()->abonnements()->get() as $abonnement){
         foreach($abonnement->activities()->get() as $activity){
             foreach($activity->seances()->get() as $seance){

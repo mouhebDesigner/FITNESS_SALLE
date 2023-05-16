@@ -24,7 +24,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach(App\Models\User::whereJsonContains('role->ROLE_ADMIN', true)->limit(5)->get() as $etudiant)
+                                @foreach(App\Models\User::whereJsonContains('role->ROLE_ABONNE', true)->limit(5)->get() as $etudiant)
                                     <tr>
                                         <td>{{ $etudiant->id }}</td>
                                         <td>{{ $etudiant->nom }}</td>

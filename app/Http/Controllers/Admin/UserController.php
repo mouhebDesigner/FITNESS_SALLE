@@ -18,9 +18,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if($request->role == "abonne"){
-            $users = User::whereJsonContains('role->ROLE_ABONNE', true)->paginate(1);
+            $users = User::whereJsonContains('role->ROLE_ABONNE', true)->paginate(10);
         } else {
-            $users = User::whereJsonContains('role->ROLE_ENTRAINEUR', true)->paginate(1);
+            $users = User::whereJsonContains('role->ROLE_ENTRAINEUR', true)->paginate(10);
 
         }
         return view('admin.users.index', compact('users'));

@@ -17,7 +17,7 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $activities = Activity::paginate(2);
+        $activities = Activity::paginate(10);
 
         return view('admin.activities.index', compact('activities'));
     }

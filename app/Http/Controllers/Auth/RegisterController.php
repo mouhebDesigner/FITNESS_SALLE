@@ -76,7 +76,7 @@ class RegisterController extends Controller
             "numTel" => $data['numTel'],
             "numMobile" => $data['numMobile'],
             "cin" => $data['cin'],
-            "role" => json_encode(['ROLE_CUSTOMER' => true]),
+            "role" => json_encode(["ROLE_ABONNE" => true]),
             "date_naissance" => $data['date_naissance'],
             'password' => Hash::make($data['password']),
         ]);
