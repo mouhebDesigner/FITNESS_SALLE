@@ -29,7 +29,7 @@
                         @endif
 
                         <li class="">
-                            <a href="{{ route('competitions.index') }}">Compétition</a>
+                            <a href="javascript:void(0)">Compétition</a>
                         </li>
 
 						<li class="">
