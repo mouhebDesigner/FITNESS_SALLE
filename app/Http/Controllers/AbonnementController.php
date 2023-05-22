@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Models\Seance;
 use App\Models\Abonnement;
 use Illuminate\Http\Request;
 use App\Models\UsersAbonnement;
-use Auth;
+
 class AbonnementController extends Controller
 {
     /**
@@ -42,7 +44,34 @@ class AbonnementController extends Controller
     public function show(Abonnement $abonnement)
     {
         $activities = $abonnement->activities()->get();
+        $jours = ['lundi', 'mardi','mercredi', 'jeudi','vendredi','samedi','dimanche'];
+        $seanceIds = [];
+        foreach($activities as $activity){
 
-        return view('abonnements.show', compact('activities', 'abonnement'));
+            foreach($activity->seances()->get() as $seance){
+                $seanceIds[] = $seance->id;
+            }
+        }
+
+        $seances =  Seance::whereIn('id', $seanceIds)->get();
+        return view('abonnements.show', compact('activities', 'abonnement', 'seances', 'jours'));
+    }
+
+     public function schedule(Abonnement $abonnement){
+        $jours = ['lundi', 'mardi','mercredi', 'jeudi','vendredi','samedi','dimanche'];
+        $seances = [];
+        $seanceIds = [];
+        foreach($abonnement->activities()->get() as $activity){
+            foreach($activity->seances()->get() as $seance){
+                $seanceIds[] = $seance->id;
+            }
+        }
+        if(count($seanceIds) > 0){
+
+            $seances =  Seance::whereIn('id', $seanceIds)->get();
+        }
+
+        return view('Abonnements.schedule', compact('jours', 'seances', 'abonnement'));
     }
 }
+

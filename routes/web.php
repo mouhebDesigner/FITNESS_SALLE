@@ -1,9 +1,12 @@
 <?php
 
 use App\Models\Seance;
+use App\Models\Abonnement;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SalleController;
 use App\Http\Controllers\Admin\SeanceController;
@@ -87,3 +90,19 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+
+Route::get('abonnement/{abonnement}/}paiement', function(Abonnement $abonnement) {
+    return view('abonnements.paiement', compact('abonnement'));
+})->name('abonnement.paiement.index')->middleware('auth');
+
+Route::post('paiement', [PaymentController::class, 'store'])->name('paiement.store');
+
+// PROFILE 
+
+Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+
+
+Route::get('abonnement/{abonnement}/schedule', 
+    [AbonnementClientController::class, 'schedule']
+)->name('abonnements.schedule')->middleware('auth');

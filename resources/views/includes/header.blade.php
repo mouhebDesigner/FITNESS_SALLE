@@ -60,7 +60,7 @@
                             {{ Auth::user()->nom }}
                             {{ Auth::user()->prenom }}
                             <ul class="sub-menu">
-								<li><a href="{{ route('login') }}">Mon profile</a></li>
+								<li><a href="{{ route('profile') }}">Mon profile</a></li>
 								<li>
                                     <a href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

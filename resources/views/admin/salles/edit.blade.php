@@ -4,7 +4,6 @@
 <main id="main" class="main">
 
     <div class="pagetitle d-flex justify-content-between">
-        <h1>Modifier une salle</h1>
 
     </div><!-- End Page Title -->
     <section class="section">

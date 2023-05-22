@@ -24,6 +24,7 @@ class User extends Authenticatable
         "adresse",
         "facebook",
         "instagram",
+        "twitter",
         "cin",
         "date_naissance",
         "email",

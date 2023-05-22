@@ -16,8 +16,9 @@
                                 </span>
                                 <h2 data-animation="fadeInUp" data-delay="0.6s" class="" style="animation-delay: 0.6s;">
                                 Construire une 
-</br>santé ideal</h2>
-                                <a href="#" class="btn btn-gra" data-animation="fadeInUp" data-delay="0.9s"
+                                <br/>
+                                santé ideal</h2>
+                                <a href="{{ route('register') }}" class="btn btn-gra" data-animation="fadeInUp" data-delay="0.9s"
                                     style="animation-delay: 0.9s;">
                                     rejoignez-nous
                                     <i class="fas fa-angle-double-right"></i>

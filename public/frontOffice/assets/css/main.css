@@ -2596,6 +2596,7 @@ label {
 }
 .service-wrap-2 .service-img img {
   width: 100%;
+  min-height: 400px;
 }
 .service-wrap-2 .service-content {
   position: absolute;
@@ -5399,7 +5400,7 @@ label {
   left: 50%;
   top: 50%;
   width: 120%;
-  height: 120%;
+  height: max-content;
   transform: translate(-50%, -50%) scale(0.8);
   background: #fff;
   z-index: 99;
@@ -11815,7 +11816,7 @@ label {
 }
 .breadcrumb-area .title {
   color: #fff;
-  font-size: 90px;
+  font-size: 60px;
   line-height: 85px;
   margin-bottom: 22px;
   font-family: "Teko", sans-serif;
