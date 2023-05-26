@@ -18,6 +18,7 @@ class CreateCompetitionsTable extends Migration
             $table->string('label');            
             $table->date('startDate');            
             $table->date('endDate');            
+            $table->text('description');            
             $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

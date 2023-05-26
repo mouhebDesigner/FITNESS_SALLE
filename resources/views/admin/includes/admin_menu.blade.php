@@ -48,6 +48,12 @@
     </a>
 </li>
 <li class="nav-item">
+    <a class="nav-link @if(Request::is('admin/competitions*')) @else collapsed @endif" href="{{ url('admin/competitions') }}">
+        <i class="bi bi-grid"></i>
+        <span>Compétitions</span>
+    </a>
+</li>
+<li class="nav-item">
     <a class="nav-link @if(Request::is('admin/contacts*')) @else collapsed @endif" href="{{ url('admin/contacts') }}">
         <i class="bi bi-grid"></i>
         <span>Contact</span>

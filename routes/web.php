@@ -10,10 +10,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SalleController;
 use App\Http\Controllers\Admin\SeanceController;
+use App\Http\Controllers\Admin\ConseilController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AbonnementController;
+use App\Http\Controllers\Admin\CompetitionController;
 use App\Http\Controllers\ContactController as ContactClientController; 
 use App\Http\Controllers\ActivityController as ActivityClientController; 
 use App\Http\Controllers\AbonnementController as AbonnementClientController;
@@ -32,6 +34,8 @@ use App\Http\Controllers\AbonnementController as AbonnementClientController;
 Route::prefix('entraineur')->name('entraineur.')->group(function () {
     Route::get('seances', [SeanceController::class, "index"])->name('seances.index');
     Route::put('seances/{seance}/annuler', [SeanceController::class, "annuler"])->name('seances.annuler');
+    Route::get('activities', [ActivityController::class, 'index'])->name('activities.index');
+    Route::resource('conseils', ConseilController::class);
 });
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resources([
@@ -41,6 +45,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         "categories" => CategoryController::class,
         "seances" => SeanceController::class,
         "abonnements" => AbonnementController::class,
+        "competitions" => CompetitionController::class,
         'contacts' => ContactController::class
     ]);
 });
@@ -106,3 +111,7 @@ Route::put('profile', [ProfileController::class, 'update'])->name('profile.updat
 Route::get('abonnement/{abonnement}/schedule', 
     [AbonnementClientController::class, 'schedule']
 )->name('abonnements.schedule')->middleware('auth');
+
+Route::get('competitions', function(){
+    return view('competitions.index');
+})->name('competitions.index');

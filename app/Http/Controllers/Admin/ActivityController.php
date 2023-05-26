@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ActivityRequest;
 use App\Http\Requests\ActivityUpdateRequest;
-
+use Auth;
 class ActivityController extends Controller
 {
     /**
@@ -17,7 +17,13 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $activities = Activity::paginate(10);
+        if(Auth::user()->isAdmin()){
+
+            $activities = Activity::paginate(10);
+        } else {
+
+            $activities = Activity::paginate(10);
+        } 
 
         return view('admin.activities.index', compact('activities'));
     }

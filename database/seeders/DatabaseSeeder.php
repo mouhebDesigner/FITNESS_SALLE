@@ -60,5 +60,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Abonnement::factory(3)->create();
         \App\Models\UsersAbonnement::factory(3)->create();
         \App\Models\AbonnementActivity::factory(3)->create();
+        \App\Models\Competition::factory(3)->create();
     }
 }

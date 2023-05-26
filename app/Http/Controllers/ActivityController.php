@@ -36,12 +36,12 @@ class ActivityController extends Controller
         $trainersIds = [];
         foreach($activity->seances()->get() as $seance){
             $seanceIds[] = $seance->id;
+            dd($seance->user->id);
             $trainersIds[] = $seance->user->id;
         }
 
         $seances =  Seance::whereIn('id', $seanceIds)->get();
         $trainers =  User::whereIn('id', $trainersIds)->get();
-
         return view('activities.show', compact('activity', 'jours', 'seances', 'trainers'));
     }
 }
