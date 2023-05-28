@@ -2,6 +2,8 @@
 
 use App\Models\Seance;
 use App\Models\Abonnement;
+use App\Models\Competition;
+use App\Models\UserCompetition;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -48,6 +50,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         "competitions" => CompetitionController::class,
         'contacts' => ContactController::class
     ]);
+    Route::get('competition/{competition}/participants', function(Competition $competition){
+        $users = $competition->users()->paginate(10);
+        return view('admin.competitions.participants', compact('users', 'competition'));
+    })->name('competition.participants');
 });
 
 
@@ -115,3 +121,19 @@ Route::get('abonnement/{abonnement}/schedule',
 Route::get('competitions', function(){
     return view('competitions.index');
 })->name('competitions.index');
+
+Route::get('competitions/{competition}', function(Competition $competition){
+    return view('competitions.show', compact('competition'));
+})->name('competitions.show');
+
+Route::get('competitions/{competition}/particpate', function(Competition $competition){
+    $userCompetition = new UserCompetition();
+
+    $userCompetition->user_id = Auth::user()->id;
+    $userCompetition->competition_id = $competition->id;
+    
+    $userCompetition->save();
+    
+    return redirect()->route('competitions.show', ['competition' => $competition])->with('success', 'Vous avez participé a cette compétition');
+
+})->name('competitions.participate')->middleware('auth');

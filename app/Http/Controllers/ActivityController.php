@@ -36,7 +36,6 @@ class ActivityController extends Controller
         $trainersIds = [];
         foreach($activity->seances()->get() as $seance){
             $seanceIds[] = $seance->id;
-            dd($seance->user->id);
             $trainersIds[] = $seance->user->id;
         }
 

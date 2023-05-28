@@ -20,44 +20,44 @@
 							sit amet, consectetur, adipisci velit, sed quia non um quam eius modi tempora incidunt ut
 							labore et magnam aliquam quaerat voluptatem.
 						</p>
-						<a class="read-more" href="about.html">
-							Learn more <i class="fas fa-angle-double-right"></i>
-						</a>
+					
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4">
 					<div class="footer-widgets latest-news">
-						<h3 class="widget-title">Useful Links</h3>
-						<div class="news-wrap">
-							<div class="news-img">
-								<a href="#">
-									<img src="assets/img/widget/widget-1.png" alt="widget">
-								</a>
-							</div>
-							<div class="news-content">
-								<h4>
-									<a href="blog-details.html">
-										Monthly Web Develop UpdateFunctional CSS, Android
-									</a>
-								</h4>
-								<span><i class="fas fa-calendar-alt"></i> 05 Jan 20</span>
-							</div>
-						</div>
-						<div class="news-wrap">
-							<div class="news-img">
-								<a href="#">
-								
-								</a>
-							</div>
-							<div class="news-content">
-								<h4>
-									<a href="blog-details.html">
-										We're Touring Southeast Asia Join To Mozilla Developer
-									</a>
-								</h4>
-								<span><i class="fas fa-calendar-alt"></i> 05 Jan 20</span>
-							</div>
-						</div>
+						<h3 class="widget-title">Menu</h3>
+						<ul>
+                            <li class="" style="color: #aca8a8">
+                                <a href="/" style="color: #aca8a8">Accueil</a>
+                                
+                            </li>
+                            <li class="" style="color: #aca8a8">
+                                <a href="{{ route('abonnements.index') }}" style="color: #aca8a8">Abonnements</a>
+                                
+                            </li>
+                            <li class="" style="color: #aca8a8">
+                                <a href="{{ route('entraineurs.index') }}" style="color: #aca8a8">Entraineurs</a>
+                            </li>
+                            
+                            @if(Auth::check())
+                            <li class="" style="color: #aca8a8">
+                                <a href="{{ route('schedule.index') }}" style="color: #aca8a8">Schedule</a>
+                            </li>
+                            @endif
+
+                            <li class="" style="color: #aca8a8">
+                                <a href="{{ route('competitions.index') }}" style="color: #aca8a8">Compétition</a>
+                            </li>
+
+                            <li class="" style="color: #aca8a8">
+                                <a href="{{ route('contact.index') }}" style="color: #aca8a8">Contact</a>
+                                
+                            </li>
+                        
+
+                           
+                            
+                        </ul>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4">

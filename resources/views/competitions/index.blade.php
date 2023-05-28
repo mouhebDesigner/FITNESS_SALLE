@@ -49,10 +49,10 @@
                                
                                 <div class="blog-meta">
                                     <span><i class="fas fa-calendar-alt"></i> {{ $competition->startDate }}</span>
-                                    <span><i class="far fa-comments"></i> {{ $competition->endDate }}</span>
+                                    <span><i class="fas fa-calendar-alt"></i> {{ $competition->endDate }}</span>
                                 </div>
 
-                                <a href="blog-details.html" class="read-more">
+                                <a href="{{ route('competitions.show', ['competition' => $competition]) }}" class="read-more">
                                     Voir détail <i class="fas fa-angle-double-right"></i>
                                 </a>
                             </div>

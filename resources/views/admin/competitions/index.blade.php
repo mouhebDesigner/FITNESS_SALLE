@@ -45,6 +45,9 @@
                                                 <a href="{{ route('admin.competitions.edit', ['competition' => $competition]) }}" data-model="compétition" title="Modifier un compétition" class="edit-confirm btn-edit">
                                                     <i class="fa fa-pen"></i>
                                                 </a>
+                                                <a href="{{ route('admin.competition.participants', ['competition' => $competition]) }}" data-model="compétition" title="Modifier un compétition" class="btn-edit" style="width: max-content; padding: 0px 50px">
+                                                    Voir participants
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
