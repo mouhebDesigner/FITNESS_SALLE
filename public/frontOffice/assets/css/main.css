@@ -7996,7 +7996,7 @@ label {
   width: 40%;
   height: 100%;
   z-index: -1;
-  background: #f7f7f7;
+  /* background: #f7f7f7; */
 }
 @media (min-width: 1200px) and (max-width: 1500px) {
   .blog-standard-details-area:before {

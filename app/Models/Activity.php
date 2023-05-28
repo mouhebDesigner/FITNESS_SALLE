@@ -28,6 +28,9 @@ class Activity extends Model
     public function competitions(){
         return $this->hasMany(Competition::class);
     }
+    public function conseils(){
+        return $this->hasMany(Conseil::class);
+    }
 
     public function abonnements(){
         return $this->belongsToMany(Abonnement::class, 'abonnement_activities', 'acitivty_id', 'abonnement_id');
